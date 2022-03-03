@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,300;1,400&family=Poppins:wght@300;400;500;600;700&display=swap");
+.login {
+  width: 100%;
+  max-height: 250vh;
+  position: relative;
+
+  .img {
+    .form {
+      position: absolute;
+      width: 539px;
+      height: 741px;
+      z-index: 99;
+      left: 50%;
+      top: 10%;
+      border-radius: 20px;
+      border: 0.5px solid #999;
+      background-color: white;
+
+      .welcome {
+        position: absolute;
+        width: 201px;
+        height: 32px;
+        left: 44px;
+        top: 44px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 32px;
+      }
+
+      .logo {
+        width: 100px;
+        position: absolute;
+        top: 44px;
+        left: 188px;
+      }
+
+      p.title {
+        position: absolute;
+        width: 186px;
+        height: 83px;
+        left: 44px;
+        top: 77px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 55px;
+        line-height: 82px;
+      }
+
+      p.username {
+        top: 308px;
+        left: 44px;
+        position: absolute;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .user-input {
+        width: 451px;
+        height: 57px;
+        padding-left: 25px;
+        left: 44px;
+        top: 345px;
+        position: absolute;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 9px;
+      }
+      p.password {
+        position: absolute;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        top: 438px;
+        left: 44px;
+      }
+
+      .pass-input {
+        width: 451px;
+        height: 57px;
+        padding-left: 25px;
+        left: 44px;
+        top: 475px;
+        position: absolute;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 9px;
+      }
+      .signin {
+        position: absolute;
+        width: 236px;
+        height: 54px;
+        left: 259px;
+        top: 608px;
+        background-color: #779341;
+        color: white;
+        border-radius: 10px;
+      }
+    }
+  }
+}
