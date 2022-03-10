@@ -1,17 +1,24 @@
 import React, { useContext, useState } from "react";
-import "./Login.scss";
+import "./ChangePassword.scss";
 import background from "./background.png";
 import logo from "../../assets/img/logo2.jpeg";
 import { AuthContext } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+function ChangePassword() {
   const navigate = useNavigate();
-  const { isLoggedIn, setIsLoggedIn, username, password, loginSuccess } =
-    useContext(AuthContext);
+  const {
+    isLoggedIn,
+    setIsLoggedIn,
+    username,
+    password,
+    changePassword,
+    loginSuccess,
+  } = useContext(AuthContext);
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
-  const [acc, setAcc] = useState({ user: "", pass: "" });
+  const [confirm, setConfirm] = useState("");
+  const [acc, setAcc] = useState({ user: "", pass: "", new: "" });
 
   const onUserChange = (e) => {
     setUser(e.target.value);
@@ -22,6 +29,10 @@ function Login() {
     setPass(e.target.value);
     setAcc({ ...acc, pass: e.target.value });
   };
+  const onConfirmChange = (e) => {
+    setConfirm(e.target.value);
+    setAcc({ ...acc, confirm: e.target.value });
+  };
 
   const onSubmit = () => {
     // if (acc.pass === "abc" && acc.pass === "123") {
@@ -31,22 +42,20 @@ function Login() {
     // } else {
     //   return;
     // }
-    console.log(acc);
     console.log(username, password);
-
     if (acc.user === username && acc.pass === password) {
-      loginSuccess();
-      navigate("/home");
+      changePassword({ newpass: acc.confirm });
+      //   loginSuccess();
+      navigate("/login");
     }
   };
-
   return (
-    <div className="login">
+    <div className="change-password">
       <div className="img">
         <img className="bg" src={background} alt="" />
         <div className="form">
           <p className="welcome">Welcome to</p>
-          <p className="title">Sign in</p>
+          <p className="title">Change Password</p>
           <img src={logo} alt="" className="logo" />
           <p className="username">Enter your username</p>
           <input
@@ -64,15 +73,23 @@ function Login() {
             value={pass}
             onChange={onPassChange}
           />
+          <p className="confirm">Enter your new password</p>
+          <input
+            type="password"
+            placeholder="Enter your new password"
+            className="confirm-input"
+            value={confirm}
+            onChange={onConfirmChange}
+          />
           <button className="signin" onClick={onSubmit}>
-            Sign in
+            Change Password
           </button>
 
-          <Link to="/change-password">Change Password</Link>
+          <Link to="/login">Login</Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default ChangePassword;

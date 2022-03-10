@@ -12,6 +12,10 @@ const AuthContextProvider = ({ children }) => {
     setIsLoggedIn(!isLoggedIn);
   };
 
+  const changePassword = ({ newpass }) => {
+    setPassword(newpass);
+  };
+
   const authContextData = {
     username,
     setUsername,
@@ -20,6 +24,7 @@ const AuthContextProvider = ({ children }) => {
     isLoggedIn,
     setIsLoggedIn,
     loginSuccess,
+    changePassword,
   };
 
   return (

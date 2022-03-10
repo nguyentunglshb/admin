@@ -10,6 +10,7 @@ import "assets/styles/tailwind.css";
 import { useContext } from "react";
 import { AuthContext } from "contexts/AuthContext";
 import Login from "components/login/Login";
+import ChangePassword from "components/change-password/ChangePassword";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -24,6 +25,7 @@ function App() {
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="login" element={<Login />} />
+        <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
 
       {/* </div> */}
